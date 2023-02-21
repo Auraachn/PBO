@@ -1,0 +1,105 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package tugasoop1;
+import java.util.Scanner;
+/**
+ *
+ * @author AURA
+ */
+public class TugasOOP1 {
+    
+public static class Karyawan {
+        String nama, alamat, pengalaman, skill, departemen;
+        static int gaji;
+        
+        void isidata(String nama1, String alamat1, String pengalaman1, String skill1, String departemen1){
+            nama = nama1;
+            alamat = alamat1;
+            pengalaman = pengalaman1;
+            skill = skill1;
+            departemen = departemen1;
+        }
+        
+        void hitunggaji (){
+            gaji = 0;
+            int gajipengalaman = 0;
+            int gajiskill = 0;
+            int gajidepartemen = 0;
+            switch (pengalaman){
+                case "pemula" :
+                    gajipengalaman = 500000;
+                    break;
+                case "menengah" :
+                    gajipengalaman = 1000000;
+                    break;
+                case "expert" :
+                    gajipengalaman = 2000000;
+                    break;
+            }
+            switch (skill){
+                case "web" :
+                    gajiskill = 1000000;
+                    break;
+                case "mobile" :
+                    gajiskill = 2000000;
+                    break;
+                case "desktop" :
+                    gajiskill = 2500000;
+                    break;
+            }
+            switch (departemen){
+                case "IT" :
+                    gajidepartemen = 8000000;
+                    break;
+                case "HRD" :
+                    gajidepartemen = 5000000;
+                    break;
+                case "finance" :
+                    gajidepartemen = 4000000;
+                    break;
+            }
+            gaji = gajidepartemen + gajiskill + gajipengalaman;
+        }
+        
+        void cetakdata(){
+            System.out.println("Nama        : " + nama);
+            System.out.println("Alamat      : " + alamat);
+            System.out.println("Pengalaman  : " + pengalaman);
+            System.out.println("Skill       : " + skill);
+            System.out.println("Departemen  : " + departemen);
+            System.out.println("Gaji        : " + gaji);   
+        }
+        }
+
+public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("=====================");
+        System.out.println("========INPUT========");
+        System.out.println("=====================");
+        System.out.print("Nama        : ");
+        String nama_1 = sc.nextLine();
+        
+        System.out.print("Alamat      : ");
+        String alamat_1 = sc.nextLine();
+        
+        System.out.print("Pengalaman  : ");
+        String pengalaman_1 = sc.nextLine();
+        
+        System.out.print("Skill       : ");
+        String skill_1 = sc.nextLine();
+        
+        System.out.print("Departemen  : ");
+        String departemen_1 = sc.nextLine();
+        
+        System.out.println("======================");
+        System.out.println("========OUTPUT========");
+        System.out.println("======================");
+        
+        Karyawan karyawan001=new Karyawan();
+        karyawan001.isidata(nama_1, alamat_1, pengalaman_1, skill_1, departemen_1);
+        karyawan001.hitunggaji();
+        karyawan001.cetakdata();
+}
+}
